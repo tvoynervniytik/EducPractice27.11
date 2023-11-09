@@ -1,0 +1,76 @@
+﻿<Page x:Class="up2711.Pages.DepartmentPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:up2711.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="DepartmentPage">
+
+    <Grid>
+        <Image Source="/Img/default.jpg"
+    Stretch="Fill"/>
+        <Button Width="70" Height="35"
+     Background="#8B4513"
+     HorizontalAlignment="Left"
+     VerticalAlignment="Top"
+     Content="←Back"
+     FontSize="18"
+     Foreground="Cornsilk"
+     FontWeight="DemiBold"
+     x:Name="backBtn" Click="backBtn_Click"/>
+        <TextBlock HorizontalAlignment="Right" VerticalAlignment="Top"
+                Background="#8b4513" Foreground="Cornsilk"
+                x:Name="HeadTb"/>
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Margin="0 0 0 40" FontSize="30"
+FontWeight="Bold"
+Foreground="#8B4513"
+            HorizontalAlignment="Center">Кафедры</TextBlock>
+            <StackPanel>
+                <ListView x:Name="disciplineSlv"
+           Height="240"
+           Width="500"
+           BorderBrush="#8B4513"
+           Background="Cornsilk"
+           BorderThickness="2"
+           Opacity="0.9"
+           ItemsSource="{Binding departments}" SelectionChanged="disciplineSlv_SelectionChanged">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="Аббревиатура"
+                     Width="100">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding Abbriviation}"
+                            Foreground="#8B4513"/>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="Название"
+                     Width="200">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding Name}"
+                            Foreground="#8B4513"/>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="Факультет"
+                     Width="180">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding Faculty.Name}"
+                            Foreground="#8B4513"/>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>
