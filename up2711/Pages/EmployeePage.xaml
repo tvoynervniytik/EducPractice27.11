@@ -29,14 +29,14 @@
                        Foreground="#8B4513"
                        HorizontalAlignment="Center" Text="Сотрудники"/>
             <StackPanel>
-                <ListView x:Name="disciplineSlv"
+                <ListView x:Name="employeeSlv"
                            Height="240"
                            Width="590"
                            BorderBrush="#8B4513"
                            Background="Cornsilk"
                            BorderThickness="2"
-                           Opacity="0.9"
-                           ItemsSource="{Binding employees}">
+                           Opacity="0.9" 
+                          ItemsSource="{Binding employees}">
                     <ListView.View>
                         <GridView>
                             <GridViewColumn Header="Фамилия"
@@ -75,10 +75,75 @@
                                     </DataTemplate>
                                 </GridViewColumn.CellTemplate>
                             </GridViewColumn>
-                          
+
                         </GridView>
                     </ListView.View>
                 </ListView>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal"
+                        Margin="0 10 0 0">
+                <Button Height="39" Width="38"
+                        Content="+"
+                        FontSize="20" FontWeight="Bold"
+                        Foreground="LightGreen" Background="CornSilk"
+                        x:Name="addBtn"
+                        BorderBrush="#8b4513" BorderThickness="1.5" Click="addBtn_Click"/>
+                <ComboBox x:Name="depCb"
+                          Height="49" Width="108"
+                          Margin="7 0 0 0" 
+                          ItemsSource="{Binding departments}">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Name}"/>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+                <ComboBox x:Name="PostCb"
+                          Height="49" Width="92"
+                          Margin="7 0 0 0">
+                    <ComboBoxItem>
+                        зав. кафедрой
+                    </ComboBoxItem>
+                    <ComboBoxItem>
+                        преподаватель
+                    </ComboBoxItem>
+                    <ComboBoxItem>
+                        инженер
+                    </ComboBoxItem>
+                </ComboBox>
+                <StackPanel HorizontalAlignment="Center">
+                    <TextBlock HorizontalAlignment="Center"
+                               FontSize="18" Foreground="#8b4513" FontWeight="DemiBold">
+                       ФИО
+                    </TextBlock>
+                    <TextBox x:Name="FIOTb" Width="148"
+                             Margin="10 0 10 0"
+                             Background="Cornsilk"
+                             BorderBrush="#8b4513"
+                             BorderThickness="1.5" Height="25"/>
+
+                </StackPanel>
+                <StackPanel Margin="0 0 30 0">
+                    <TextBlock HorizontalAlignment="Center"
+                               FontSize="18" Foreground="#8b4513" FontWeight="DemiBold">
+                       Зарплата
+                    </TextBlock>
+                    <TextBox x:Name="salaryTb" Width="94"
+                         
+                         Background="Cornsilk"
+                         BorderBrush="#8b4513"
+                         BorderThickness="1.5" Height="25"/>
+                </StackPanel>
+
+                <Button Height="35" Width="45"
+                        Content="✕"
+                        Background="CornSilk"
+                        BorderBrush="#8b4513"
+                        BorderThickness="1.5"
+                        HorizontalAlignment="Right"
+                        FontSize="15" FontWeight="Bold"
+                        Foreground="PaleVioletRed"
+                        x:Name="delBtn" Click="delBtn_Click"/>
             </StackPanel>
         </StackPanel>
     </Grid>

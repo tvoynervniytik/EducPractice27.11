@@ -46,7 +46,6 @@ namespace up2711.Pages
         {
             Exam ex = new Exam();
             
-
             var student = studentCb.SelectedItem as Student;
             
             ex.Id_Student = student.Id;
@@ -95,7 +94,7 @@ namespace up2711.Pages
                     x.Id_Student == del.Id_Student).ToList().FirstOrDefault();
             if (delL != null)
             { 
-                MessageBox.Show("yes" + delL.Student.Surname);
+                MessageBox.Show("yes, " + delL.Student.Surname);
 
                 DBConnection.educPractice.Exam.Remove(delL);
                 DBConnection.educPractice.SaveChanges();

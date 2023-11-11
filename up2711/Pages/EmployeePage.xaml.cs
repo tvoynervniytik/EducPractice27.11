@@ -39,5 +39,68 @@ namespace up2711.Pages
         {
             NavigationService.Navigate(new AuthorizationPage());
         }
+
+        private void addBtn_Click(object sender, RoutedEventArgs e)
+        {
+           
+            
+            int depart = 0;
+            var dep = depCb.SelectedIndex;
+            if (dep != null)
+            { 
+                if (dep == 0)
+                {
+                    depart = 1;
+                }
+                if (dep == 1)
+                {
+                    depart = 2;
+                }
+                if (dep == 2)
+                {
+                    depart = 3;
+                }
+                if (dep == 3)
+                {
+                    depart = 4;
+                }
+                if (dep == 4)
+                {
+                    depart = 5;
+                }
+                if (dep == 5)
+                {
+                    depart = 6;
+                }
+            }
+            MessageBox.Show(depart.ToString());
+            Employee empl = new Employee();
+            empl.Id_Department = depart; 
+            empl.Surname = FIOTb.Text.Trim();            
+            empl.Post = PostCb.Text.Trim();
+            empl.Salary = int.Parse(salaryTb.Text);
+
+            DBConnection.educPractice.Employee.Add(empl);
+            DBConnection.educPractice.SaveChanges();
+
+            employeeSlv.ItemsSource = new List<Employee>(DBConnection.educPractice.Employee.ToList());
+        }
+
+        private void delBtn_Click(object sender, RoutedEventArgs e)
+        {
+            var del = employeeSlv.SelectedItem as Employee;
+            var delL = DBConnection.educPractice.Employee.
+                Where(x => x.Id == del.Id).ToList().FirstOrDefault();
+            if (delL != null)
+            {
+                MessageBox.Show("yes, " + delL.Surname);
+
+                DBConnection.educPractice.Employee.Remove(delL);
+                DBConnection.educPractice.SaveChanges();
+
+                employeeSlv.ItemsSource = new List<Employee>(DBConnection.educPractice.Employee.ToList());
+            }
+            else MessageBox.Show("no");
+        }
     }
 }

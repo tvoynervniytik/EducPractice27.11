@@ -31,7 +31,8 @@ namespace up2711.Pages
             disciplines = new List<Discipline>(DBConnection.educPractice.Discipline.Where(i => i.Id_Department == department.Id).ToList());
             disciplineCb = new List<Discipline>(DBConnection.educPractice.Discipline.ToList());
             departments = new List<Department>(DBConnection.educPractice.Department.ToList());
-
+            loginUser.dep = department;
+            loginUser.dis = DiscSlv.SelectedItem as Discipline;
             DepartmentNameTb.Text = department.Name;
             this.DataContext = this;
         }
@@ -42,8 +43,7 @@ namespace up2711.Pages
             {
                 DiscSlv.SelectedItem = null;
                 NavigationService.Navigate(new EditDiscDepPage(discipline));
-            }
-            
+            }      
         }
 
         private void addBtn_Click(object sender, RoutedEventArgs e)
@@ -68,7 +68,7 @@ namespace up2711.Pages
 
             if (delL != null)
             {
-                MessageBox.Show("yes" + delL.Name);
+                MessageBox.Show("yes, " + delL.Name);
 
                 DBConnection.educPractice.Discipline.Remove(delL);
                 DBConnection.educPractice.SaveChanges();
@@ -76,6 +76,11 @@ namespace up2711.Pages
                 DiscSlv.ItemsSource = new List<Discipline>(DBConnection.educPractice.Discipline.Where(i=> i.Id_Department == loginUser.dep.Id).ToList());
             }
             else MessageBox.Show("no");
+        }
+
+        private void backBtn_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new DepartmentPage());
         }
     }
 }

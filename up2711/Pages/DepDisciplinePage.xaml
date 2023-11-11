@@ -10,6 +10,15 @@
 
     <Grid>
         <Image Source="/img/default.jpg" Stretch="Fill"/>
+        <Button Width="70" Height="35"
+Background="#8B4513"
+HorizontalAlignment="Left"
+VerticalAlignment="Top"
+Content="←Back"
+FontSize="18"
+Foreground="Cornsilk"
+FontWeight="DemiBold"
+x:Name="backBtn" Click="backBtn_Click"/>
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
             <TextBlock x:Name="DepartmentNameTb"
                        Margin="0 0 0 10"

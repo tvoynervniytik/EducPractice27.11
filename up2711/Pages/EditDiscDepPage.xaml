@@ -13,62 +13,36 @@
         <StackPanel Orientation="Vertical" 
                     HorizontalAlignment="Center" VerticalAlignment="Center">
             <TextBlock Text="Редактирование дисциплины"
-                       Margin="0 0 0 10"
+                       Margin="0 0 0 50"
                        FontSize="30"
                        FontWeight="Bold"
                        HorizontalAlignment="Center"
                        Foreground="#8B4513"/>
             <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center"
                         Orientation="Vertical" Background="Cornsilk" Height="150"
-                        Margin="0 50 0 0"
+                        Margin="0 70 0 20"
                         Opacity="0.8">
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center"
-                            VerticalAlignment="Center">
-                    <StackPanel>
+                <StackPanel>
                         <TextBlock Text="Иcходное название"
                                    FontSize="20" FontWeight="DemiBold" 
                                    Foreground="#8B4513" Padding="10 10 10 10"/>
                         <TextBlock x:Name="ishNameTb" FontSize="18"
                                    Foreground="#8B4513"/>
                     </StackPanel>
-                    <StackPanel>
-                        <TextBlock Text="Исходный объём"
-                                   FontSize="20" FontWeight="DemiBold" 
-                                   Foreground="#8B4513" Padding="10 10 10 10"/>
-                        <TextBlock x:Name="ishVolumeTb"
-                                   FontSize="18"
-                                   Foreground="#8B4513" />
-                    </StackPanel>
+                  
                    
-                </StackPanel>
-                <StackPanel Orientation="Horizontal">
-                    <StackPanel VerticalAlignment="Center">
-                        <TextBlock Text="Изм. название" 
-                                   FontSize="20" FontWeight="DemiBold" 
-                                   Foreground="#8B4513" Padding="10 10 10 10"/>
-                        <ComboBox x:Name="discCb"
-                                  Width="150" Height="30"
-                                  Margin="7 0 0 0"
-                                  ItemsSource="{Binding disciplineCb}">
-                            <ComboBox.ItemTemplate>
-                                <DataTemplate>
-                                    <TextBlock Text="{Binding dis.Name}"/>
-                                </DataTemplate>
-                            </ComboBox.ItemTemplate>
-                        </ComboBox>
-                    </StackPanel>
                     <StackPanel VerticalAlignment="Center">
                         <TextBlock Text="Изм. объём"
                                    FontSize="20" FontWeight="DemiBold" 
                                    Foreground="#8B4513" Padding="10 10 10 10"/>
-                        <TextBox x:Name="discNameTb" Width="150" Height="30"
+                        <TextBox x:Name="discVolumeTb" Width="150" Height="30"
                                  Margin="7 0 0 0"
                                  Background="Cornsilk"
                                  BorderBrush="#8b4513"
                                  BorderThickness="1.5"
                                  Text="{Binding dis.Volume}"/>
                     </StackPanel>
-                </StackPanel>
+               
                 
                 
             </StackPanel>

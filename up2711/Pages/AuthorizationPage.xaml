@@ -9,37 +9,32 @@
       Title="AuthorizationPage">
 
     <Grid>
-        <Image Source="/Img/login.jpg"
-        Stretch="Fill"></Image>
+        <Image Source="/Img/login.jpg" Stretch="Fill"></Image>
         <StackPanel HorizontalAlignment="Center"
-             Height="320"
-             Background="Black"
-             Opacity="0.8">
+                    Height="320"
+                    Background="Black"
+                    Opacity="0.8">
             <StackPanel HorizontalAlignment="Center">
                 <TextBlock FontSize="30"
-                    Margin="10 20 10 20"
-                    FontWeight="Bold"
-                    Foreground="White">Authorization</TextBlock>
+                           Margin="10 20 10 20"
+                           FontWeight="Bold"
+                           Foreground="White">Authorization</TextBlock>
             </StackPanel>
-            <StackPanel HorizontalAlignment="Center"
-                 VerticalAlignment="Center">
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
                 <TextBlock FontSize="20"
                     Margin="0 0 0 15"
                     Foreground="White"
                     FontWeight="DemiBold">Login</TextBlock>
                 <TextBox x:Name="loginTb"></TextBox>
                 <TextBlock FontSize="20"
-         Margin="0 20 0 15"
-         Foreground="White"
-         FontWeight="DemiBold">Password</TextBlock>
-                <PasswordBox x:Name="passwordTb" 
-                      Margin="0 0 0 40"></PasswordBox>
+                           Margin="0 20 0 15"
+                           Foreground="White"
+                           FontWeight="DemiBold">Password</TextBlock>
+                <PasswordBox x:Name="passwordTb" Margin="0 0 0 40"></PasswordBox>
                 <StackPanel Orientation="Horizontal">
                     <Button x:Name="loginBtn"
-                            FontSize="20" 
-                            Margin="0 0 10 0"
-                            Foreground="White"
-                            Background="Black"
+                            FontSize="20" Margin="0 0 10 0"
+                            Foreground="White" Background="Black"
                             FontWeight="DemiBold" 
                             BorderBrush="White" Click="loginBtn_Click">Login</Button>
                     <Button x:Name="guestBtn"

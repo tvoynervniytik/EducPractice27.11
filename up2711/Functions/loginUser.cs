@@ -12,5 +12,6 @@ namespace up2711.Functions
         public static Employee user;
         public static Exam exam1;
         public static Department dep;
+        public static Discipline dis;
     }
 }
